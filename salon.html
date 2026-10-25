@@ -1,0 +1,1488 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ÉCLAT — пространство красоты</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+
+  --navy: #10152f;
+
+  --navy2: #242b59;
+
+  --lilac: #c7b9ff;
+
+  --pink: #f4c9df;
+
+  --cream: #fbf8f5;
+
+  --muted: #8589a3;
+
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+
+  margin: 0;
+
+  background: var(--cream);
+
+  color: var(--navy);
+
+  font-family: 'DM Sans', Arial, sans-serif;
+
+}
+
+a { color: inherit; text-decoration: none; }
+
+button, input, select, textarea { font: inherit; }
+
+button { cursor: pointer; }
+
+.wrap { width: min(1160px, calc(100% - 40px)); margin: auto; }
+
+section { padding: 85px 0; }
+
+.eyebrow {
+
+  text-transform: uppercase;
+
+  letter-spacing: .2em;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+}
+
+h2 {
+
+  font: 500 clamp(36px, 5vw, 60px)/1.1 'Playfair Display', serif;
+
+  margin: 15px 0 20px;
+
+}
+
+.btn {
+
+  display: inline-block;
+
+  border: 0;
+
+  border-radius: 40px;
+
+  background: var(--lilac);
+
+  color: var(--navy);
+
+  padding: 15px 24px;
+
+  font-weight: 700;
+
+  transition: .25s;
+
+}
+
+.btn:hover { transform: translateY(-3px); background: #ded5ff; }
+
+header {
+
+  position: absolute;
+
+  top: 0;
+
+  width: 100%;
+
+  padding: 25px 0;
+
+  color: white;
+
+  z-index: 2;
+
+  border-bottom: 1px solid #ffffff25;
+
+}
+
+.nav {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+}
+
+.logo {
+
+  font: 600 28px 'Playfair Display', serif;
+
+  letter-spacing: .14em;
+
+}
+
+.logo span { color: var(--pink); }
+
+.navlinks { display: flex; gap: 25px; font-size: 13px; }
+
+.navlinks a:hover { color: var(--pink); }
+
+.hero {
+
+  min-height: 720px;
+
+  padding: 155px 0 80px;
+
+  color: white;
+
+  background:
+
+    radial-gradient(ellipse at 80% 30%, #454b83, transparent 45%),
+
+    linear-gradient(125deg, #0d122a, #171d40 65%, #2c315f);
+
+  overflow: hidden;
+
+}
+
+.hero-grid {
+
+  display: grid;
+
+  grid-template-columns: 1.05fr .95fr;
+
+  align-items: center;
+
+  gap: 40px;
+
+}
+
+.hero h1 {
+
+  font: 400 clamp(55px, 7vw, 90px)/1 'Playfair Display', serif;
+
+  letter-spacing: -.05em;
+
+  margin: 25px 0;
+
+}
+
+.hero h1 em { color: var(--pink); }
+
+.hero p { color: #c5c8dc; line-height: 1.8; }
+
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+
+.outline {
+
+  border: 1px solid #ffffff80;
+
+  background: transparent;
+
+  color: white;
+
+}
+
+.hero-art {
+
+  min-height: 440px;
+
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+}
+
+.art-main {
+
+  width: 78%;
+
+  height: 390px;
+
+  border-radius: 48% 48% 12px 12px;
+
+  background: linear-gradient(140deg, #f5dce6, #b6b9d8 55%, #686e9f);
+
+  box-shadow: 0 30px 90px #070a2055;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #34385e;
+
+  text-align: center;
+
+  padding: 25px;
+
+}
+
+.art-main span {
+
+  font: italic 38px 'Playfair Display', serif;
+
+}
+
+.art-label {
+
+  position: absolute;
+
+  bottom: 4%;
+
+  left: 0;
+
+  background: white;
+
+  color: var(--navy);
+
+  padding: 20px 25px;
+
+  box-shadow: 0 18px 50px #080b2355;
+
+}
+
+.art-label small { color: var(--muted); display: block; }
+
+.art-label strong {
+
+  display: block;
+
+  font: 25px 'Playfair Display', serif;
+
+  margin-top: 5px;
+
+}
+
+.stats { background: white; padding: 28px 0; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+
+.stat { padding: 5px 20px; border-right: 1px solid #eee8ed; }
+
+.stat:first-child { padding-left: 0; }
+
+.stat:last-child { border: 0; }
+
+.stat strong {
+
+  display: block;
+
+  font: 35px 'Playfair Display', serif;
+
+}
+
+.stat span { color: var(--muted); font-size: 11px; }
+
+.section-head {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  gap: 25px;
+
+  margin-bottom: 35px;
+
+}
+
+.section-head p { max-width: 360px; color: #777b91; line-height: 1.7; }
+
+.service-grid {
+
+юля шевкаленко (19:10):
+display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+}
+
+.service-card {
+
+  background: white;
+
+  padding: 28px;
+
+  border: 1px solid #eee8ed;
+
+  transition: .3s;
+
+}
+
+.service-card:hover {
+
+  transform: translateY(-7px);
+
+  box-shadow: 0 20px 45px #25224b12;
+
+}
+
+.service-icon {
+
+  width: 48px;
+
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #f0eaff;
+
+  font-size: 23px;
+
+  margin-bottom: 20px;
+
+}
+
+.service-card h3 {
+
+  font: 27px 'Playfair Display', serif;
+
+  margin: 0 0 10px;
+
+}
+
+.service-card p { color: #818499; line-height: 1.7; font-size: 13px; }
+
+.service-bottom {
+
+  border-top: 1px solid #eee9ef;
+
+  padding-top: 17px;
+
+  margin-top: 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.service-bottom span { color: var(--muted); font-size: 12px; }
+
+.feature { background: var(--navy); color: white; }
+
+.feature-grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 60px;
+
+}
+
+.feature-image {
+
+  min-height: 440px;
+
+  background: linear-gradient(135deg, #d8c8ec, #777ba7 65%, #333b70);
+
+  display: grid;
+
+  place-items: center;
+
+  text-align: center;
+
+  padding: 25px;
+
+}
+
+.feature-image span {
+
+  font: italic 44px 'Playfair Display', serif;
+
+  color: #34385e;
+
+}
+
+.feature p { color: #c4c7db; line-height: 1.9; }
+
+.check-list { list-style: none; padding: 0; line-height: 2.5; }
+
+.check-list li::before { content: "✦"; color: var(--pink); margin-right: 12px; }
+
+.pricing { background: #f1edf7; }
+
+.price-layout {
+
+  display: grid;
+
+  grid-template-columns: 250px 1fr;
+
+  gap: 30px;
+
+}
+
+.price-tabs { display: flex; flex-direction: column; gap: 8px; }
+
+.price-tab {
+
+  border: 0;
+
+  background: transparent;
+
+  text-align: left;
+
+  padding: 16px;
+
+  color: #777b91;
+
+}
+
+.price-tab.active, .price-tab:hover { background: var(--navy); color: white; }
+
+.price-panel { background: white; padding: 15px 28px; }
+
+.price-row {
+
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  gap: 15px;
+
+  align-items: center;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid #eeeaf1;
+
+}
+
+.price-row:last-child { border: 0; }
+
+.price-row h4 { margin: 0 0 6px; font-size: 14px; }
+
+.price-row p { margin: 0; color: #888ba0; font-size: 11px; line-height: 1.6; }
+
+.price-value { text-align: right; white-space: nowrap; }
+
+.price-value strong { display: block; font: 23px 'Playfair Display', serif; }
+
+.price-value button {
+
+  border: 0;
+
+  background: transparent;
+
+  color: #8c7cc7;
+
+  text-decoration: underline;
+
+  font-size: 11px;
+
+}
+
+.gallery { background: white; }
+
+.gallery-grid {
+
+  display: grid;
+
+  grid-template-columns: 1.1fr .9fr .9fr;
+
+  grid-template-rows: 210px 210px;
+
+  gap: 14px;
+
+}
+
+.gallery-item {
+
+  background: linear-gradient(135deg, #d8c8ec, #8d91ba, #f0cadc);
+
+  display: grid;
+
+  place-items: center;
+
+  text-align: center;
+
+  padding: 15px;
+
+  color: #34385e;
+
+  font: italic 26px 'Playfair Display', serif;
+
+}
+
+.gallery-item:first-child { grid-row: span 2; }
+
+.reviews { background: #f7f2f6; }
+
+.review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+.review { background: white; padding: 25px; }
+
+.stars { color: #b49cdd; letter-spacing: .15em; }
+
+.review blockquote {
+
+  margin: 20px 0;
+
+  font: 20px/1.45 'Playfair Display', serif;
+
+}
+
+.review-author { color: var(--muted); font-size: 11px; }
+
+.review-author strong { display: block; color: var(--navy); margin-bottom: 4px; }
+
+.booking {
+
+  background: linear-gradient(120deg, #161b3a, #282e5d);
+
+  color: white;
+
+}
+
+.booking-grid {
+
+  display: grid;
+
+  grid-template-columns: .8fr 1.2fr;
+
+  gap: 60px;
+
+}
+
+.booking p { color: #c3c6dc; line-height: 1.8; }
+
+.booking-info { margin-top: 35px; line-height: 1.8; font-size: 13px; }
+
+.booking-info span { display: block; color: #c3c6dc; font-size: 11px; margin-top: 15px; }
+
+.booking-form { background: white; color: var(--navy); padding: 30px; }
+
+.field { margin-bottom: 18px; }
+
+юля шевкаленко (19:10):
+.field label { display: block; font-size: 12px; margin-bottom: 8px; font-weight: 600; }
+
+.field input, .field select, .field textarea {
+
+  width: 100%;
+
+  padding: 13px;
+
+  border: 1px solid #e2dfea;
+
+  background: #fcfbfd;
+
+  outline: none;
+
+}
+
+.field input:focus, .field select:focus, .field textarea:focus { border-color: #9c8bd8; }
+
+.field textarea { min-height: 95px; resize: vertical; }
+
+.form-note { color: #85889a; font-size: 10px; line-height: 1.6; margin-top: 15px; }
+
+.toast { display: none; margin-top: 15px; padding: 15px; background: #f0eaff; font-size: 13px; line-height: 1.6; }
+
+.toast.show { display: block; }
+
+.faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 60px; }
+
+.faq-item { border-bottom: 1px solid #e5dfe7; }
+
+.faq-question {
+
+  padding: 20px 0;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+}
+
+.faq-answer { display: none; padding: 0 0 20px; color: #777b91; line-height: 1.8; font-size: 13px; }
+
+.faq-item.open .faq-answer { display: block; }
+
+.faq-item.open .faq-question span { transform: rotate(45deg); }
+
+footer { background: #0d122a; color: white; padding: 40px 0; }
+
+.footer-top { display: flex; justify-content: space-between; gap: 25px; align-items: center; }
+
+footer p { color: #c3c6dc; font-size: 13px; }
+
+.socials { display: flex; flex-wrap: wrap; gap: 20px; font-size: 12px; }
+
+.footer-bottom {
+
+  border-top: 1px solid #ffffff20;
+
+  margin-top: 30px;
+
+  padding-top: 20px;
+
+  color: #b7bad0;
+
+  font-size: 11px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+}
+
+@media(max-width:800px) {
+
+  .navlinks { gap: 12px; font-size: 11px; }
+
+  .nav .btn { display: none; }
+
+  .hero-grid, .feature-grid, .booking-grid, .faq-grid { grid-template-columns: 1fr; gap: 35px; }
+
+  .hero { padding-top: 135px; }
+
+  .hero-art { min-height: 370px; }
+
+  .art-main { height: 320px; }
+
+  .section-head { display: block; }
+
+  .service-grid, .review-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .price-layout { grid-template-columns: 1fr; }
+
+  .price-tabs { display: grid; grid-template-columns: repeat(2, 1fr); }
+
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 180px 180px; }
+
+  .gallery-item:first-child { grid-row: span 2; }
+
+}
+
+@media(max-width:520px) {
+
+  section { padding: 60px 0; }
+
+  .wrap { width: calc(100% - 30px); }
+
+  .navlinks { gap: 10px; }
+
+  .navlinks a { font-size: 10px; }
+
+  .logo { font-size: 22px; }
+
+  .hero { min-height: auto; }
+
+  .hero h1 { font-size: 54px; }
+
+  .hero-art { min-height: 310px; }
+
+  .art-main { height: 270px; }
+
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .stat { border: 0; padding: 0; }
+
+  .service-grid, .review-grid { grid-template-columns: 1fr; }
+
+  .price-panel { padding: 12px 16px; }
+
+  .price-row { grid-template-columns: 1fr auto; gap: 8px; }
+
+  .price-value strong { font-size: 19px; }
+
+  .gallery-grid { grid-template-rows: 150px 150px 150px; gap: 8px; }
+
+  .booking-form { padding: 20px; }
+
+  .footer-top, .footer-bottom { flex-direction: column; align-items: flex-start; }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="wrap nav">
+
+    <a class="logo" href="#home">ÉCLAT<span>.</span></a>
+
+    <nav class="navlinks">
+
+      <a href="#services">Услуги</a>
+
+      <a href="#pricing">Прайс</a>
+
+      <a href="#gallery">Атмосфера</a>
+
+      <a href="#contacts">Контакты</a>
+
+    </nav>
+
+    <a class="btn" href="#booking">Записаться ↗</a>
+
+  </div>
+
+</header>
+
+<main>
+
+<section class="hero" id="home">
+
+  <div class="wrap hero-grid">
+
+    <div>
+
+      <div class="eyebrow">Beauty space · эстетика и забота</div>
+
+      <h1>Красота<br>в твоём <em>ритме.</em></h1>
+
+      <p>Пространство, где профессиональный уход встречается с атмосферой спокойствия. Время для себя — без спешки и лишнего шума.</p>
+
+      <div class="hero-actions">
+
+        <a class="btn" href="#booking">Выбрать время ↗</a>
+
+        <a class="btn outline" href="#services">Наши услуги</a>
+
+юля шевкаленко (19:10):
+</div>
+
+      <p style="margin-top:40px;font-size:11px;letter-spacing:.1em">ЭСТЕТИКА · ПРОФЕССИОНАЛИЗМ · ЗАБОТА</p>
+
+    </div>
+
+    <div class="hero-art">
+
+      <div class="art-main"><span>Beauty<br>is a ritual.</span></div>
+
+      <div class="art-label"><small>Твоё время для себя</small><strong>ÉCLAT Beauty Space</strong></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="stats">
+
+  <div class="wrap stats-grid">
+
+    <div class="stat"><strong>6+</strong><span>НАПРАВЛЕНИЙ УХОДА</span></div>
+
+    <div class="stat"><strong>1:1</strong><span>ИНДИВИДУАЛЬНЫЙ ПОДХОД</span></div>
+
+    <div class="stat"><strong>100%</strong><span>ВНИМАНИЯ К ДЕТАЛЯМ</span></div>
+
+    <div class="stat"><strong>♡</strong><span>ЗАБОТЫ О ТЕБЕ</span></div>
+
+  </div>
+
+</div>
+
+<section id="services">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div><div class="eyebrow">Что мы делаем</div><h2>Услуги для твоей<br>уверенности</h2></div>
+
+      <p>Подбираем процедуры с учётом твоих пожеланий. Наша цель — подчеркнуть твою индивидуальность и подарить время для себя.</p>
+
+    </div>
+
+    <div class="service-grid">
+
+      <article class="service-card">
+
+        <div class="service-icon">✧</div><h3>Косметология</h3>
+
+        <p>Уходовые процедуры, очищение и увлажнение кожи.</p>
+
+        <div class="service-bottom"><span>От 700 ₽</span><a href="#pricing">↗</a></div>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="service-icon">◇</div><h3>Маникюр</h3>
+
+        <p>Аккуратная форма, покрытие и дизайн на любой вкус.</p>
+
+        <div class="service-bottom"><span>От 1 200 ₽</span><a href="#pricing">↗</a></div>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="service-icon">✿</div><h3>Брови и ресницы</h3>
+
+        <p>Выразительный взгляд, гармоничная форма и оттенок.</p>
+
+        <div class="service-bottom"><span>От 600 ₽</span><a href="#pricing">↗</a></div>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="service-icon">〰</div><h3>Волосы</h3>
+
+        <p>Стрижки, укладки и уход для красоты и блеска волос.</p>
+
+        <div class="service-bottom"><span>От 1 200 ₽</span><a href="#pricing">↗</a></div>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="service-icon">✦</div><h3>Макияж</h3>
+
+        <p>Образы для повседневных встреч и особенных событий.</p>
+
+        <div class="service-bottom"><span>От 1 800 ₽</span><a href="#pricing">↗</a></div>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="service-icon">☾</div><h3>Уход за телом</h3>
+
+        <p>Массаж и уходовые ритуалы для расслабления.</p>
+
+        <div class="service-bottom"><span>От 1 700 ₽</span><a href="#pricing">↗</a></div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="feature">
+
+  <div class="wrap feature-grid">
+
+    <div class="feature-image"><span>Take a moment<br>for yourself.</span></div>
+
+    <div>
+
+      <div class="eyebrow">Больше, чем процедура</div>
+
+      <h2>Ритуал заботы<br>о <em style="color:var(--pink)">себе.</em></h2>
+
+      <p>Мы верим, что красота начинается с ощущения комфорта. Поэтому важны не только результат, но и каждый момент твоего визита.</p>
+
+      <ul class="check-list">
+
+        <li>Внимание к твоим пожеланиям</li>
+
+        <li>Индивидуальный подбор процедур</li>
+
+        <li>Комфортная атмосфера</li>
+
+        <li>Профессиональный подход</li>
+
+      </ul>
+
+      <a class="btn" href="#booking">Записаться на визит ↗</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="pricing" id="pricing">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div><div class="eyebrow">Прозрачные цены</div><h2>Наш прайс</h2></div>
+
+      <p>Выбери направление, чтобы посмотреть услуги и ориентировочную стоимость.</p>
+
+    </div>
+
+    <div class="price-layout">
+
+      <div class="price-tabs">
+
+        <button class="price-tab active" data-tab="face">Косметология</button>
+
+юля шевкаленко (19:11):
+<button class="price-tab" data-tab="nails">Маникюр и педикюр</button>
+
+        <button class="price-tab" data-tab="brows">Брови и ресницы</button>
+
+        <button class="price-tab" data-tab="hair">Волосы</button>
+
+        <button class="price-tab" data-tab="makeup">Макияж</button>
+
+        <button class="price-tab" data-tab="body">Уход за телом</button>
+
+      </div>
+
+      <div>
+
+        <div class="price-panel" id="pricePanel"></div>
+
+        <p style="font-size:11px;color:#888ba0;line-height:1.6">Цены на сайте демонстрационные. Перед публикацией замени их на актуальный прайс салона.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="gallery" id="gallery">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div><div class="eyebrow">Атмосфера ÉCLAT</div><h2>Красота в деталях</h2></div>
+
+      <p>Нежные оттенки, спокойная атмосфера и внимание к мелочам.</p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">Beauty<br>ritual</div>
+
+      <div class="gallery-item">Soft<br>glow</div>
+
+      <div class="gallery-item">Details<br>matter</div>
+
+      <div class="gallery-item">Time<br>for you</div>
+
+      <div class="gallery-item">Feel<br>beautiful</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="reviews">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div><div class="eyebrow">Ваши впечатления</div><h2>Тёплые слова</h2></div>
+
+      <p>Примеры оформления отзывов. Перед публикацией замени их реальными отзывами клиентов.</p>
+
+    </div>
+
+    <div class="review-grid">
+
+      <article class="review">
+
+        <div class="stars">★★★★★</div>
+
+        <blockquote>«Очень приятная атмосфера, всё спокойно и аккуратно. Обязательно вернусь снова».</blockquote>
+
+        <div class="review-author"><strong>Анна</strong>Уход за лицом</div>
+
+      </article>
+
+      <article class="review">
+
+        <div class="stars">★★★★★</div>
+
+        <blockquote>«Маникюр выглядит именно так, как я и хотела. Спасибо за внимание к деталям».</blockquote>
+
+        <div class="review-author"><strong>Виктория</strong>Маникюр</div>
+
+      </article>
+
+      <article class="review">
+
+        <div class="stars">★★★★★</div>
+
+        <blockquote>«Записалась быстро, всё объяснили заранее. Прекрасное время для себя».</blockquote>
+
+        <div class="review-author"><strong>Мария</strong>Брови и ресницы</div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="booking" id="booking">
+
+  <div class="wrap booking-grid">
+
+    <div>
+
+      <div class="eyebrow">Пора уделить время себе</div>
+
+      <h2>Твоя запись<br>начинается <em style="color:var(--pink)">здесь.</em></h2>
+
+      <p>Оставь заявку — мы поможем подобрать удобное время и ответим на вопросы.</p>
+
+      <div class="booking-info">
+
+        <div><span>АДРЕС</span>Добавь адрес своего салона</div>
+
+        <div><span>ЧАСЫ РАБОТЫ</span>Ежедневно · по предварительной записи</div>
+
+        <div><span>СВЯЗЬ</span>Добавь телефон или Telegram</div>
+
+      </div>
+
+    </div>
+
+    <form class="booking-form" id="bookingForm">
+
+      <div class="field">
+
+        <label for="clientName">Как к тебе обращаться?</label>
+
+        <input id="clientName" name="name" placeholder="Твоё имя" required minlength="2">
+
+      </div>
+
+      <div class="field">
+
+        <label for="clientPhone">Номер телефона</label>
+
+        <input id="clientPhone" name="phone" type="tel" placeholder="+7 ___ ___-__-__" required>
+
+      </div>
+
+      <div class="field">
+
+        <label for="serviceSelect">Услуга</label>
+
+        <select id="serviceSelect" name="service" required>
+
+          <option value="">Выбери услугу</option>
+
+          <option>Косметология</option>
+
+          <option>Маникюр и педикюр</option>
+
+          <option>Брови и ресницы</option>
+
+          <option>Волосы</option>
+
+          <option>Макияж</option>
+
+          <option>Уход за телом</option>
+
+        </select>
+
+      </div>
+
+      <div class="field">
+
+юля шевкаленко (19:11):
+<label for="dateSelect">Желаемая дата</label>
+
+        <input id="dateSelect" name="date" type="date">
+
+      </div>
+
+      <div class="field">
+
+        <label for="comment">Пожелания (необязательно)</label>
+
+        <textarea id="comment" name="comment" placeholder="Удобное время или название процедуры"></textarea>
+
+      </div>
+
+      <button class="btn" type="submit">Подготовить заявку ↗</button>
+
+      <div class="form-note">После отправки можно скопировать текст заявки и передать его администратору. Автоматическая отправка в Telegram пока не подключена.</div>
+
+      <div class="toast" id="formToast" role="status"></div>
+
+    </form>
+
+  </div>
+
+</section>
+
+<section id="contacts">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div><div class="eyebrow">Мы на связи</div><h2>Остались вопросы?</h2></div>
+
+      <p>Добавь здесь реальные контакты салона, адрес и ссылки на социальные сети.</p>
+
+    </div>
+
+    <a class="btn" href="#booking">Оставить заявку ↗</a>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div class="wrap">
+
+    <div class="footer-top">
+
+      <div><a class="logo" href="#home">ÉCLAT<span>.</span></a><p>Пространство красоты и заботы о себе.</p></div>
+
+      <div class="socials">
+
+        <a href="#booking">Запись</a>
+
+        <a href="#pricing">Прайс</a>
+
+        <a href="#services">Услуги</a>
+
+        <a href="#contacts">Контакты</a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <span>© <span id="year"></span> ÉCLAT Beauty Space</span>
+
+      <span>Концепт сайта</span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+
+const priceData = {
+
+  face: [
+
+    ["Консультация косметолога","Подбор домашнего и профессионального ухода",0,30],
+
+    ["Уходовая процедура для лица","Очищение, увлажнение и сияние",2200,60],
+
+    ["Ультразвуковая чистка","Деликатное очищение кожи",1800,45],
+
+    ["Комбинированная чистка","Индивидуальный подход по типу кожи",3000,90],
+
+    ["Поверхностный пилинг","Процедура подбирается специалистом",2500,45],
+
+    ["Массаж лица","Расслабление и тонус",1800,40],
+
+    ["Альгинатная маска","Дополнение к уходу",700,20]
+
+  ],
+
+  nails: [
+
+    ["Маникюр без покрытия","Форма, обработка, уход",1200,45],
+
+    ["Маникюр + гель-лак","Однотонное покрытие",2000,90],
+
+    ["Маникюр + укрепление","Укрепление базой или гелем",2400,120],
+
+    ["Снятие покрытия","При последующей услуге",300,20],
+
+    ["Дизайн ногтей","Стоимость зависит от сложности",100,15],
+
+    ["Педикюр без покрытия","Обработка стоп и ногтей",1900,60],
+
+    ["Педикюр + гель-лак","Уход и стойкое покрытие",2600,90]
+
+  ],
+
+  brows: [
+
+    ["Коррекция бровей","Пинцет или воск",700,20],
+
+    ["Окрашивание бровей","Краска или хна",800,30],
+
+    ["Коррекция + окрашивание","Подбор формы и оттенка",1300,45],
+
+    ["Ламинирование бровей","Укладка и фиксация формы",1800,60],
+
+    ["Ламинирование ресниц","Подкручивание и визуальный объём",2200,75],
+
+    ["Окрашивание ресниц","Выразительный оттенок",600,20],
+
+    ["Комплекс брови + ресницы","Уточняется у мастера",3200,90]
+
+  ],
+
+  hair: [
+
+    ["Укладка волос","По длине и желаемому образу",1800,60],
+
+    ["Вечерняя укладка","Образ для особого случая",2800,90],
+
+    ["Женская стрижка","Мытьё и укладка включены",2000,60],
+
+    ["Стрижка кончиков","Без изменения формы",1200,30],
+
+    ["Уход для блеска волос","Восстанавливающий уход",2500,60],
+
+    ["Экспресс-уход","Дополнение к укладке",1500,30],
+
+    ["Плетение","Цена зависит от сложности",1500,45]
+
+  ],
+
+  makeup: [
+
+    ["Дневной макияж","Лёгкий естественный образ",2500,60],
+
+    ["Вечерний макияж","Акцентный образ",3500,75],
+
+    ["Макияж для фотосессии","С учётом света и концепции",4000,90],
+
+    ["Свадебный макияж","Репетиция обсуждается отдельно",5500,90],
+
+    ["Экспресс-макияж","Быстрый свежий образ",1800,40]
+
+  ],
+
+  body: [
+
+    ["Массаж спины","Расслабляющая процедура",1700,30],
+
+    ["Массаж всего тела","Продолжительность по согласованию",3000,60],
+
+    ["Скрабирование тела","Мягкое обновление кожи",1800,30],
+
+юля шевкаленко (19:11):
+["Увлажняющий уход для тела","Питание и мягкость кожи",2200,45],
+
+    ["SPA-ритуал","Комплексный уход и расслабление",4200,90]
+
+  ]
+
+};
+
+const money = n => n === 0 ? "По запросу" : n.toLocaleString("ru-RU") + " ₽";
+
+function renderPrices(key) {
+
+  const panel = document.getElementById("pricePanel");
+
+  panel.innerHTML = priceData[key].map(item => `
+
+    <div class="price-row">
+
+      <div>
+
+        <h4>${item[0]}</h4>
+
+        <p>${item[1]} · ${item[3]} мин</p>
+
+      </div>
+
+      <div class="price-value">
+
+        <strong>${money(item[2])}</strong>
+
+        <button type="button" data-book="${item[0]}" data-category="${key}">Записаться ↗</button>
+
+      </div>
+
+    </div>
+
+  `).join("");
+
+  panel.querySelectorAll("[data-book]").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      const categories = {
+
+        face: "Косметология",
+
+        nails: "Маникюр и педикюр",
+
+        brows: "Брови и ресницы",
+
+        hair: "Волосы",
+
+        makeup: "Макияж",
+
+        body: "Уход за телом"
+
+      };
+
+      document.getElementById("serviceSelect").value = categories[key];
+
+      document.getElementById("comment").value = "Интересует услуга: " + button.dataset.book;
+
+      document.getElementById("booking").scrollIntoView({behavior: "smooth"});
+
+      document.getElementById("clientName").focus({preventScroll: true});
+
+    });
+
+  });
+
+}
+
+document.querySelectorAll(".price-tab").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    document.querySelectorAll(".price-tab").forEach(tab => tab.classList.remove("active"));
+
+    button.classList.add("active");
+
+    renderPrices(button.dataset.tab);
+
+  });
+
+});
+
+renderPrices("face");
+
+document.querySelectorAll(".faq-question").forEach(question => {
+
+  question.addEventListener("click", () => {
+
+    question.parentElement.classList.toggle("open");
+
+  });
+
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const dateInput = document.getElementById("dateSelect");
+
+dateInput.min = new Date().toISOString().slice(0, 10);
+
+document.getElementById("bookingForm").addEventListener("submit", async event => {
+
+  event.preventDefault();
+
+  const form = new FormData(event.currentTarget);
+
+  const details = [
+
+    "Здравствуйте! Хочу записаться в ÉCLAT.",
+
+    "Имя: " + form.get("name"),
+
+    "Телефон: " + form.get("phone"),
+
+    "Услуга: " + form.get("service"),
+
+    "Желаемая дата: " + (form.get("date") || "не указана"),
+
+    "Комментарий: " + (form.get("comment") || "нет")
+
+  ].join("\n");
+
+  const toast = document.getElementById("formToast");
+
+  toast.innerHTML = "";
+
+  const message = document.createElement("p");
+
+  message.textContent = "Заявка подготовлена. Скопируй её текст и передай администратору.";
+
+  toast.appendChild(message);
+
+  const copyButton = document.createElement("button");
+
+  copyButton.type = "button";
+
+  copyButton.className = "btn";
+
+  copyButton.textContent = "Скопировать заявку";
+
+  toast.appendChild(copyButton);
+
+  copyButton.addEventListener("click", async () => {
+
+    try {
+
+      await navigator.clipboard.writeText(details);
+
+      message.textContent = "Текст заявки скопирован!";
+
+    } catch {
+
+      const textArea = document.createElement("textarea");
+
+      textArea.value = details;
+
+      toast.appendChild(textArea);
+
+      textArea.focus();
+
+      textArea.select();
+
+      message.textContent = "Выдели текст и скопируй его вручную.";
+
+    }
+
+  });
+
+  toast.classList.add("show");
+
+});
+
+</script>
+
+</body>
+
+</html>
